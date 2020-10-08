@@ -1,0 +1,27 @@
+﻿@model Lab2.Models.Insurance
+
+@{
+    ViewBag.Title = "DemoExpression";
+    Layout = "~/Views/_BasicLayout.cshtml"
+}
+
+<table>
+    <thead>
+        <tr><th>Property</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Client</td><td>@Model.Client</td></tr>
+        <tr><td>Sum</td><td>@Model.Sum</td></tr>
+        <tr> 
+            <td>Rate Level</td>
+            <td>
+                @if (Model.Sum > 0 && Model.Sum < 20000) { @: Small insurance
+                }
+                else if (Model.Sum > 20000 && Model.Sum < 60000) { @: Medium insurance
+                }
+                else {@: Medium insurance
+                            }
+            </td>
+</tbody>
+</table>
+

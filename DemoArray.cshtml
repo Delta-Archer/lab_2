@@ -1,0 +1,23 @@
+﻿@model Lab2.Models.Insurance[]
+
+@{
+    ViewBag.Title = "DemoArray";
+    Layout = "~/Views/_BasicLayout.cshtml"
+}
+
+@if (Model.Length > 0)
+{
+    <table>
+        <thead><tr><th>Client</th><th>Sum</th></tr></thead>
+        <tbody> 
+            @foreach (Razor.Models.Insurance p in Model)
+            {
+                <tr> 
+                    <td>@p.Client </td> 
+                    <td>@p.Sum &#8372; </td> 
+                </tr>
+             }
+        </tbody>
+    </table> 
+else{ <h2>No insurance found</h2>}
+
